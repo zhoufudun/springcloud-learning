@@ -1,5 +1,8 @@
 package com.macro.cloud.config;
 
+import com.macro.cloud.annotation.AutoInject;
+import com.macro.cloud.controller.UserRibbonController;
+import com.macro.cloud.domain.User;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -15,5 +18,11 @@ public class RibbonConfig {
     @LoadBalanced
     public RestTemplate restTemplate(){
         return new RestTemplate();
+    }
+
+    @Bean
+    @AutoInject
+    public User user(){
+        return new User(1L,"zzz","fff");
     }
 }
