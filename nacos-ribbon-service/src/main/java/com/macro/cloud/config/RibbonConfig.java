@@ -20,9 +20,4 @@ public class RibbonConfig {
         return new RestTemplate();
     }
 
-    @Bean
-    @AutoInject
-    public User user(){
-        return new User(1L,"zzz","fff");
-    }
 }

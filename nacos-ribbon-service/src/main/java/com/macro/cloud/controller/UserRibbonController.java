@@ -20,7 +20,7 @@ import java.util.List;
 @RequestMapping("/user")
 public class UserRibbonController {
 
-    @AutoInject // 自动注入被 @AutoInject 标记的bean
+    @AutoInject // 自动注入被 @AutoInject 标记的bean, 必须和@Autowired配合使用
     @Autowired
     private List<User> studentList = Lists.newArrayList();
 
