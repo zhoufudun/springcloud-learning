@@ -2,6 +2,7 @@ package com.macro.cloud.service.impl;
 
 import com.macro.cloud.domain.User;
 import com.macro.cloud.service.UserService;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
@@ -17,6 +18,7 @@ import java.util.stream.Collectors;
 public class UserServiceImpl implements UserService {
     private List<User> userList;
 
+    @Async
     @Override
     public void create(User user) {
         userList.add(user);
